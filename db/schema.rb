@@ -34,18 +34,18 @@ ActiveRecord::Schema.define(:version => 20120416235307) do
     t.string   "name"
     t.string   "email"
     t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "photos", :force => true do |t|
     t.string   "caption"
     t.integer  "category_id"
-    t.boolean  "active",           :default => true
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.boolean  "active",      :default => true
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "image"
   end
 

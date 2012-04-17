@@ -17,6 +17,14 @@
   <%= @photo.active ? "Yes" : "No" %>
 </p>
 
+
+<p>
+	<% if @comments.empty?%>
+		No comments yet on this photo<br>
+	<% end%>
+	<%= render :partial => "partials/add_comments_to_page", :locals => {obj: @photo}%>
+</p>
+
 <div class="form-actions">
   <%= link_to 'Back', photos_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_photo_path(@photo), :class => 'btn' %>
