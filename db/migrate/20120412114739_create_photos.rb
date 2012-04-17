@@ -4,6 +4,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :caption
       t.integer :category_id
       t.boolean :active, :default => true
+      
 
       t.timestamps
     end

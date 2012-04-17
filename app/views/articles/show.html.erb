@@ -16,6 +16,13 @@
   <%= @article.active ? "Yes" : "No" %>
 </p>
 
+<p>
+	<% if @comments.empty?%>
+		No comments yet on this article<br>
+	<% end%>
+	<%= render :partial => "partials/add_comments_to_page", :locals => {obj: @photo}%>
+</p>
+
 <div class="form-actions">
   <%= link_to 'Back', articles_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_article_path(@article), :class => 'btn' %>
