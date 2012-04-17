@@ -1,7 +1,7 @@
 class Photo < ActiveRecord::Base
   # Carrierwave
   mount_uploader :image, ImageUploader
-  
+  has_many :comments, :as => :commentable, :dependent => :destroy
   # Relationships
   belongs_to :category
   

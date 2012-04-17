@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   # Relationship
   belongs_to :category
+  has_many :comments, :as => :commentable, :dependent => :destroy
   
   # Validations
   validates_presence_of :title, :content
